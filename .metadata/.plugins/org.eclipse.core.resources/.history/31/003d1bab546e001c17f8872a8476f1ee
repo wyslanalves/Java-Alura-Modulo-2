@@ -1,0 +1,21 @@
+package teste;
+
+import modelo.ContaCorrente;
+
+public class TesteSacar {
+
+	public static void main(String[] args) {
+		
+		modelo.Conta conta = new modelo.ContaCorrenteContaCorrente(123, 321);
+		conta.deposita(200.0);
+		try {
+			conta.saca(290.0);
+		}catch(SaldoinsuficienteException ex) {
+			System.out.println("Ex: " + ex.getMessage());
+		}
+		
+
+		System.out.println(conta.getSaldo());
+	}
+
+}
