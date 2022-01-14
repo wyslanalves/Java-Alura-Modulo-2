@@ -1,5 +1,6 @@
 package br.com.bytebank.banco.test;
 
+import br.com.bytebank.banco.especial.ContaEspecial;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 import br.com.bytebank.banco.modelo.SaldoinsuficienteException;
@@ -7,6 +8,9 @@ import br.com.bytebank.banco.modelo.SaldoinsuficienteException;
 public class TestandoContas {
 
 	public static void main(String[] args) throws SaldoinsuficienteException{
+		
+		ContaEspecial ce = new ContaEspecial(123, 5555);
+		//ce.saldo -> só acesso dentro do pacote
 		
 		
 		//full qualified Name FQN

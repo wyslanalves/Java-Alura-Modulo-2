@@ -1,5 +1,11 @@
 package br.com.bytebank.banco.modelo;
-
+/**
+ * 
+ * 
+ * 
+ * @author wyslan alves
+ *
+ */
 public abstract class Conta {
 
 	// atributos
@@ -10,7 +16,11 @@ public abstract class Conta {
 
 	private static int total;
 	
-	
+	/**
+	 * Construtor para inicializar o objeto Conta a partir da agencia e número
+	 * @param agencia
+	 * @param numero
+	 */
 	
 	//construtor padão
 	public Conta(int agencia, int numero) {
@@ -25,7 +35,12 @@ public abstract class Conta {
 	
 	public abstract void deposita(double valor);
 	
-
+/**
+ * Valor precisa ser maior que o saldo.
+ * 
+ * @param valor
+ * @throws SaldoinsuficienteException
+ */
 	public void saca(double valor)  throws SaldoinsuficienteException {
 		if (this.saldo < valor) {
 			//problema
@@ -83,5 +98,9 @@ public abstract class Conta {
 		//System.out.println(this.saldo); erro
 		
 		return Conta.total;
+	}
+	@Override
+	public String toString() {
+		return "Numero" + this.numero + ", Agencia: " + this.agencia;
 	}
 }
